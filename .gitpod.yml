@@ -1,17 +1,27 @@
 tasks:
   - init: |
-      mkdir /workspace/signoz
-      cd /workspace/signoz
-      git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
-      docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
-      # open the readme document in VS Code
-      gp open README.md
+      # mkdir /workspace/signoz
+      # cd /workspace/signoz
+      # git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
+      # docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
+      # # open the readme document in VS Code
+      # gp open README.md
       docker pull mysql:latest
       docker run --name your-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:latest
       docker run --name your-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
   - name: Initialize 
     command: |
        echo "Almost ready"
+       #  docker-compose -f /workspace/signoz/signoz/deploy/docker/clickhouse-setup/docker-compose.yaml up -d
+       docker start your-mysql
+       docker start your-postgres
+
+ports:
+
+  # SigNoz Frontend
+  # - port: 3301
+  #   onOpen: open-preview
+  #   visibility: public
 
 vscode:
   extensions:
