@@ -16,7 +16,7 @@ tasks:
        docker start your-mysql
        docker start your-postgres
 
-ports:
+#ports:
 
   # SigNoz Frontend
   # - port: 3301
