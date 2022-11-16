@@ -16,12 +16,38 @@ tasks:
        docker start your-mysql
        docker start your-postgres
 
-#ports:
+ports:
 
-  # SigNoz Frontend
-  # - port: 3301
-  #   onOpen: open-preview
-  #   visibility: public
+  # Fruits
+  - port: 8090
+    onOpen: open-preview
+    visibility: public
+
+  # OpenTelemetry Demo WebStore
+  - port: 8080
+    onOpen: open-preview
+    visibility: public
+
+  # Prometheus
+  - port: 9090
+    onOpen: open-preview
+    visibility: public
+
+  # Jaeger
+  - port: 49153
+    onOpen: open-preview
+    visibility: public
+
+  # Grafana
+  - port: 49156
+    onOpen: open-preview
+    visibility: public
+
+  # Locust - Load Generation
+  - port: 49173
+    onOpen: open-preview
+    visibility: public
+    
 
 vscode:
   extensions:
