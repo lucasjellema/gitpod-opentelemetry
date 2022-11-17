@@ -33,6 +33,7 @@ docker run -d --name jaeger-stand-alone \
 In directory *app*, run the Node application - exposing an API on port 3000:
 
 ```
+npm install
 node .
 ```
 
