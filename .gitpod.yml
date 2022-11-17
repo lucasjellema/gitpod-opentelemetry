@@ -4,6 +4,8 @@ tasks:
   - name: Initialize 
     command: |
        echo "Almost ready"
+       cd app
+       npm install
 
 ports:
 
@@ -23,7 +25,7 @@ ports:
     visibility: public
   
   # Jaeger Standalone
-  - port: 16886
+  - port: 16686
     onOpen: open-browser
     visibility: public
     
