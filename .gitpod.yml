@@ -1,27 +1,11 @@
 tasks:
   - init: |
-      # mkdir /workspace/signoz
-      # cd /workspace/signoz
-      # git clone -b main https://github.com/SigNoz/signoz.git && cd signoz/deploy/
-      # docker-compose -f docker/clickhouse-setup/docker-compose.yaml up -d
-      # # open the readme document in VS Code
-      # gp open README.md
-      docker pull mysql:latest
-      docker run --name your-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:latest
-      docker run --name your-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+      gp open README.md
   - name: Initialize 
     command: |
        echo "Almost ready"
-       #  docker-compose -f /workspace/signoz/signoz/deploy/docker/clickhouse-setup/docker-compose.yaml up -d
-       docker start your-mysql
-       docker start your-postgres
 
 ports:
-
-  # Fruits
-  - port: 8090
-    onOpen: open-preview
-    visibility: public
 
   # OpenTelemetry Demo WebStore
   - port: 8080
@@ -36,6 +20,11 @@ ports:
   # Jaeger
   - port: 49153
     onOpen: open-preview
+    visibility: public
+    
+  # Jaeger OTLP Collector
+  - port: 4317
+    onOpen: ignore
     visibility: public
 
   # Grafana
