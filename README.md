@@ -74,6 +74,7 @@ curl http://localhost:3000/todo/1
 ```
 
 Check in the Jaeger UI if you can find evidence of these slow requests (that should not be too hard).
+![](images/jaeger-slow-requests.png)  
 
 # OpenTelemetry End to End, All Encompassing Demo
 
