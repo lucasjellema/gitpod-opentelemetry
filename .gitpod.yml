@@ -21,6 +21,11 @@ ports:
   - port: 49153
     onOpen: open-preview
     visibility: public
+  
+  # Jaeger Standalone
+  - port: 16886
+    onOpen: open-browser
+    visibility: public
     
   # Jaeger OTLP Collector
   - port: 4317
