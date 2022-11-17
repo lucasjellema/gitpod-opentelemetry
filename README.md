@@ -27,7 +27,7 @@ docker run -d --name jaeger-stand-alone \
   -p 14268:14268 \
   -p 14269:14269 \
   -p 9411:9411 \
-  jaegertracing/all-in-one:1.39)
+  jaegertracing/all-in-one:1.39
 ```
 
 In directory *app*, run the Node application - exposing an API on port 3000:
