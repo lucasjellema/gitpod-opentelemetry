@@ -1,7 +1,7 @@
 tasks:
   - init: |
-      gp open README.md
       git clone https://github.com/open-telemetry/opentelemetry-demo.git
+      gp open README.md
   - name: Initialize standalone Node Application 
     command: |
        echo "Installing dependencies for ToDo API node app"
@@ -11,6 +11,7 @@ tasks:
     command: |
        echo "Running OpenTelemetry demo"
        cd opentelemetry-demo/
+       sleep 5s &&
        docker compose up --no-build
       
 
