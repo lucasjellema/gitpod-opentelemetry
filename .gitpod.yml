@@ -1,11 +1,18 @@
 tasks:
   - init: |
       gp open README.md
-  - name: Initialize 
+      git clone https://github.com/open-telemetry/opentelemetry-demo.git
+  - name: Initialize standalone Node Application 
     command: |
-       echo "Almost ready"
+       echo "Installing dependencies for ToDo API node app"
        cd app
        npm install
+  - name: Initialize OpenTelemetry demo
+    command: |
+       echo "Running OpenTelemetry demo"
+       cd opentelemetry-demo/
+       docker compose up --no-build
+      
 
 ports:
 
